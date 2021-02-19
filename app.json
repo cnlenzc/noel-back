@@ -1,0 +1,8 @@
+{
+  "name": "noel-back",
+  "description": "noel vendas backend",
+  "repository": "https://github.com/cnlenzc/noel-back.git",
+  "logo": "https://cdn.rawgit.com/heroku/node-js-getting-started/main/public/node.svg",
+  "keywords": ["node", "express", "heroku"],
+  "image": "heroku/nodejs"
+}

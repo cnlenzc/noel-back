@@ -1,0 +1,32 @@
+{
+  "name": "noel-back",
+  "version": "0.0.1",
+  "description": "noel vendas backend",
+  "main": "src/noel-back-server.js",
+  "scripts": {
+    "start": "node src/noel-back-server.js",
+    "test": "node test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cnlenzc/noel-back.git"
+  },
+  "author": "Carlos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cnlenzc/noel-back/issues"
+  },
+  "homepage": "https://github.com/cnlenzc/noel-back#readme",
+  "engines": {
+    "node": "14.15.3",
+    "npm": "6.14.10",
+    "yarn": "1.22.10"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "got": "^11.8.1",
+    "tape": "^5.1.1"
+  }
+}
