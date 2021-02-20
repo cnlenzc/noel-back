@@ -1,10 +1,11 @@
-const { ok } = require('assert')
+require('dotenv').config()
+
 const express = require('express')
 const path = require('path')
 const PORT = process.env.PORT || 5052
 
 const mongodb = require('mongodb')
-const uri = "mongodb+srv://dbuser:mdGafosa71@clusternoel.t6h7n.mongodb.net/test?retryWrites=true&w=majority"
+const uri = process.env.MONGO_URI
 
 async function testMongo() {
   const client = new mongodb.MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true })
