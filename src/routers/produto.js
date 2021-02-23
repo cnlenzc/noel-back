@@ -7,10 +7,10 @@ const router = express.Router()
 
 router.post('/', async (req, res) => {
   try {
-    if (!req.body.nome) {
+    if (!req.body.descricao) {
       throw new BadRequest('nome não fornecido')
     }
-    const ret = await mongo.add('contato', req.body)
+    const ret = await mongo.add('produto', req.body)
     res.status(201).json(ret)
   } catch (error) {
     next(error)
@@ -19,7 +19,7 @@ router.post('/', async (req, res) => {
 
 router.get('/', async (req, res, next) => {
   try {
-    const ret = await mongo.list('contato')
+    const ret = await mongo.list('produto')
     res.json(ret)
   } catch (error) {
     next(error)
@@ -28,7 +28,7 @@ router.get('/', async (req, res, next) => {
 
 router.get('/:id', async (req, res, next) => {
   try {
-    const ret = await mongo.get('contato', req.params.id)
+    const ret = await mongo.get('produto', req.params.id)
     if (!ret.length) {
       throw new NotFound('informação não encontrada')
     }
@@ -40,7 +40,7 @@ router.get('/:id', async (req, res, next) => {
 
 router.put('/:id', async (req, res, next) => {
   try {
-    const ret = await mongo.update('contato', req.params.id, req.body)
+    const ret = await mongo.update('produto', req.params.id, req.body)
     if (!ret.matchedCount) {
       throw new NotFound('informação não encontrada')
     }
@@ -52,7 +52,7 @@ router.put('/:id', async (req, res, next) => {
 
 router.delete('/:id', async (req, res, next) => {
   try {
-    const ret = await mongo.del('contato', req.params.id)
+    const ret = await mongo.del('produto', req.params.id)
     if (!ret.deletedCount) {
       throw new NotFound('informação não encontrada')
     }
