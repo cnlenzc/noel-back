@@ -2,9 +2,9 @@
   "name": "noel-back",
   "version": "0.0.1",
   "description": "noel vendas backend",
-  "main": "src/noel-back-server.js",
+  "main": "src/server-noel-back.js",
   "scripts": {
-    "start": "node src/noel-back-server.js",
+    "start": "node src/server-noel-back.js",
     "test": "node test/test.js"
   },
   "repository": {
@@ -22,9 +22,11 @@
     "npm": "6.14.10"
   },
   "dependencies": {
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "mongodb": "^3.6.4"
+    "mongodb": "^3.6.3"
   },
   "devDependencies": {
     "got": "^11.8.1",

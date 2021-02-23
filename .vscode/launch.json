@@ -7,8 +7,8 @@
     {
       "type": "pwa-node",
       "request": "launch",
-      "name": "noel-back-server.js",
-      "program": "${workspaceFolder}/src/noel-back-server.js"
+      "name": "server-noel-back.js",
+      "program": "${workspaceFolder}/src/server-noel-back.js"
     }
   ]
 }

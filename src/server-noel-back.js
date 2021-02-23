@@ -1,0 +1,22 @@
+require('dotenv').config()
+
+const bodyParser = require('body-parser')
+const compression = require('compression')
+const cors = require('cors')
+const express = require('express')
+const path = require('path')
+
+const handleErrors = require('./middlewares/handleErrors')
+const mongo = require('./utils/mongo')
+const routerApi = require('./routers/api')
+
+express()
+  .use(cors())
+  .use(compression())
+  .use(bodyParser.json({ limit: '10mb' }))
+  .use('/api', routerApi)
+  .use(express.static(path.join(__dirname, 'public')))
+  .get('/test', (req, res) => res.json({ test: 'ok', datetime: new Date() }))
+  .get('/test-mongo', async (req, res) => res.json(await mongo.list('test')))
+  .use(handleErrors)
+  .listen(process.env.PORT, () => console.log(`Listening on ${process.env.PORT}. http://localhost:${process.env.PORT}`))
