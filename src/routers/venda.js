@@ -5,7 +5,7 @@ const mongo = require('../utils/mongo')
 
 const router = express.Router()
 
-router.post('/', async (req, res) => {
+router.post('/', async (req, res, next) => {
   try {
     // if (!req.body.descricao) {
     //   throw new BadRequest('nome não fornecido')
